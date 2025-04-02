@@ -1,0 +1,70 @@
+<div class="mission-list-cards">
+  @for (mission of missions; track $index) {
+    <mat-card (click)="goToMission(mission.flight_number)" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title class="mission-name">{{mission.mission_name}}</mat-card-title>
+          <mat-card-subtitle class="mission-year">{{mission.launch_year}}</mat-card-subtitle>
+          <img mat-card-sm-image src="{{mission.links.mission_patch_small}}" >
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{mission.launch_failure_details?.reason ?? mission.details}}</p>
+      </mat-card-content>
+    </mat-card>
+  }
+
+</div>
+
+  <!--&lt;!&ndash; Cards with media area &ndash;&gt;
+  <mat-card class="example-card" appearance="raised">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Small</mat-card-subtitle>
+        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      adsdsd
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Medium</mat-card-subtitle>
+        <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"  alt="Image of a Shiba Inu">
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>asas
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Large</mat-card-subtitle>
+        <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      BlabalabakbskajsskajskajskajSKJAS
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="example-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>Shiba Inu</mat-card-title>
+        <mat-card-subtitle>Extra large</mat-card-subtitle>
+        <img mat-card-xl-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      allsjldhdjkshdkjasd
+    </mat-card-content>
+  </mat-card>-->
+

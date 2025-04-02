@@ -1,0 +1,17 @@
+mat-card{
+  width: 600px;
+  margin: 12px;
+  background-color: azure;
+}
+
+.mission-list-cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+mat-card:hover{
+  cursor: pointer;
+  background: #d0e2e2;
+}

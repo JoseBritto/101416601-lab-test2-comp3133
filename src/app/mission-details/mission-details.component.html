@@ -1,0 +1,44 @@
+<main>
+  <h1> {{mission.mission_name}} </h1>
+  <div class="subtitles">
+    <p class="subtitle">{{mission.launch_site.site_name}}</p>
+    <p class="subtitle">Flight #{{mission.flight_number}}</p>
+    <p class="subtitle"> {{mission.launch_year}}</p>
+  </div>
+
+  <mat-card class="rocket-details">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>Rocket Details</mat-card-title>
+      </mat-card-title-group>
+      <img mat-card-sm-image src="{{mission.links.mission_patch_small}}" >
+
+    </mat-card-header>
+
+    <mat-card-content>
+      <p class="details-text">
+        {{mission.details}}
+      </p>
+      <br>
+      Rocket Used: {{mission.rocket.rocket_name}} <br>
+      Rocket Type: {{mission.rocket.rocket_type}}
+    </mat-card-content>
+
+    <mat-card-actions>
+      <a mat-button color="primary" href="{{mission.links.article_link}}">Article</a>
+      <a mat-button color="primary" href="{{mission.links.wikipedia}}">Wikipedia</a>
+      <a mat-button color="primary" href="{{mission.links.video_link}}">Video</a>
+    </mat-card-actions>
+  </mat-card>
+
+  <div class="actions">
+
+  </div>
+
+  <a class="back-button" mat-raised-button color="warn" href="/">
+    Close
+  </a>
+
+</main>
+
+
