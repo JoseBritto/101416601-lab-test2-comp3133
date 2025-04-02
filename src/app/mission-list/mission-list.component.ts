@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ApiClientService} from "../services/api-client.service";
 import {Mission} from "../models/mission";
 import {  MatCardModule } from "@angular/material/card";
@@ -14,12 +14,21 @@ import {Router} from "@angular/router";
   styleUrl: './mission-list.component.css'
 })
 export class MissionListComponent {
-  public missions: Mission[] = []
+  public missions: Mission[] = [];
+  @Input() year: string = '';
 
   constructor(private apiClientService: ApiClientService, private router: Router) {  }
 
   ngOnInit() {
     this.getMissions();
+  }
+
+  ngOnChanges(){
+    if(this.year == null || this.year.toString().trim() === '') {
+      this.getMissions();
+    } else {
+      this.getFilteredMissions();
+    }
   }
 
   getMissions() {
@@ -36,6 +45,15 @@ export class MissionListComponent {
   goToMission(mission:  number) {
     this.router.navigate(['/mission/' + mission])
   }
+
+  getFilteredMissions() {
+    this.apiClientService.getMissionInYear(this.year).subscribe({
+      next: result => {
+        this.missions = result;
+      }
+    })
+  }
+
 
 
 }

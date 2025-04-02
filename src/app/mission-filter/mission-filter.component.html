@@ -1,0 +1,5 @@
+<form (submit)="submitData()">
+  <label for="year-input">Filter by Launch Year</label>
+  <input type="number" [(ngModel)]="inputData" name="yearInput" id="year-input" required>
+  <button type="submit">Filter</button>
+</form>

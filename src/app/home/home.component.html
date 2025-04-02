@@ -1,3 +1,4 @@
 <div class="missions">
-  <app-mission-list></app-mission-list>
+  <app-mission-filter (year)="storeYear($event)"></app-mission-filter>
+  <app-mission-list [year]="year"></app-mission-list>
 </div>

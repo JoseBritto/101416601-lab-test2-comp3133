@@ -20,4 +20,8 @@ export class ApiClientService {
   public getMission(id: number) : Observable<Mission> {
     return this.httpClient.get<Mission>(`${this.BASE_URL}/${id}`);
   }
+
+  public getMissionInYear(year: string) : Observable<Mission[]> {
+    return this.httpClient.get<Mission[]>(`${this.BASE_URL}?launch_year=${year}`);
+  }
 }
